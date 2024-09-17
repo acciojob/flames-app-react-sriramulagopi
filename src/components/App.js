@@ -11,6 +11,9 @@ class App extends Component {
             e.preventDefault();
             const name1 = e.target.name1.value;
             const name2 = e.target.name2.value;
+            if(name1==="" || name2===""){
+                return;
+            }
             let arr = [
                 "Siblings",
                 "Friends",
