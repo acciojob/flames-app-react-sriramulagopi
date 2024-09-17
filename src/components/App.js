@@ -27,20 +27,17 @@ const App = function(){
             let len = ((name1.length+name2.length)-(count*2))%6;
             setResult(array[len])
         }
-        else{
-            alert("Name length should be greater than three")
-        }
     }
     const clear = function(){
         setName1("");
         setName2("");
     }
-    return <div className="conatiner">
-        <input type="text" value={name1} onChange={e=>setName1(e.target.value)}/>
-        <input type="text" value={name2} onChange={e=>setName2(e.target.value)}/>
-        <button onClick={relation}>Find Relation</button>
-        <button onClick={clear}>Clear</button>
-        <h1>{result}</h1>
+    return <div id="main">
+        <input type="text" value={name1} data-testid="input1" onChange={e=>setName1(e.target.value)}/>
+        <input type="text" value={name2} data-testid="input2" onChange={e=>setName2(e.target.value)}/>
+        <button onClick={relation} data-testid="calculate_relationship">Find Relation</button>
+        <button onClick={clear} data-testid="clear">Clear</button>
+        <h1 data-testid="answer" >{result}</h1>
     </div>
 }
 
